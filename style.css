@@ -1,47 +1,145 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    color: #5a3045;
+
+    /* Sakura pink background */
+    background:
+        radial-gradient(circle at 10% 20%, rgba(255, 182, 193, 0.65) 0 8px, transparent 9px),
+        radial-gradient(circle at 80% 15%, rgba(255, 192, 203, 0.7) 0 10px, transparent 11px),
+        radial-gradient(circle at 30% 75%, rgba(255, 182, 193, 0.6) 0 7px, transparent 8px),
+        radial-gradient(circle at 90% 70%, rgba(255, 205, 215, 0.7) 0 12px, transparent 13px),
+        radial-gradient(circle at 55% 40%, rgba(255, 170, 190, 0.55) 0 9px, transparent 10px),
+        linear-gradient(135deg, #fff0f5, #ffdce8, #fff5f8);
+
+    background-attachment: fixed;
+    min-height: 100vh;
 }
 
+/* Blurred sakura petals */
+body::before {
+    content: "";
+    position: fixed;
+    inset: -50px;
+    z-index: -1;
+
+    background:
+        radial-gradient(ellipse at 15% 25%, rgba(255, 150, 175, 0.55) 0 12px, transparent 13px),
+        radial-gradient(ellipse at 70% 10%, rgba(255, 175, 195, 0.6) 0 15px, transparent 16px),
+        radial-gradient(ellipse at 85% 35%, rgba(255, 140, 170, 0.5) 0 11px, transparent 12px),
+        radial-gradient(ellipse at 40% 60%, rgba(255, 185, 205, 0.65) 0 14px, transparent 15px),
+        radial-gradient(ellipse at 10% 80%, rgba(255, 155, 180, 0.55) 0 13px, transparent 14px),
+        radial-gradient(ellipse at 75% 85%, rgba(255, 190, 210, 0.65) 0 16px, transparent 17px);
+
+    filter: blur(8px);
+    opacity: 0.8;
+}
+
+/* Header */
 header {
-    background-color: #4f46e5;
+    background: linear-gradient(135deg, #d94f83, #ee82a9, #f5a3bd);
     color: white;
     text-align: center;
-    padding: 40px 20px;
+    padding: 50px 20px;
+
+    box-shadow: 0 5px 20px rgba(180, 70, 110, 0.25);
 }
 
 header h1 {
     margin: 0;
     font-size: 40px;
+    text-shadow: 2px 2px 5px rgba(120, 40, 70, 0.3);
 }
 
+header p {
+    font-size: 18px;
+}
+
+/* Main content */
 main {
     max-width: 900px;
-    margin: 30px auto;
+    margin: 35px auto;
     padding: 0 20px;
 }
 
+/* Cards */
 section {
-    background-color: white;
-    margin-bottom: 20px;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.88);
+    margin-bottom: 25px;
+    padding: 28px;
+    border-radius: 18px;
+
+    border: 1px solid rgba(255, 160, 190, 0.4);
+
+    box-shadow:
+        0 8px 25px rgba(180, 80, 120, 0.15);
+
+    backdrop-filter: blur(8px);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+section:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 30px rgba(180, 70, 110, 0.25);
+}
+
+/* Section headings */
 section h2 {
-    color: #4f46e5;
+    color: #d94f83;
+    border-bottom: 2px solid #f3b0c6;
+    padding-bottom: 8px;
 }
 
+/* Lists */
 li {
-    margin: 10px 0;
+    margin: 12px 0;
 }
 
+/* Button */
+button {
+    background: linear-gradient(135deg, #d94f83, #ed7fa5);
+    color: white;
+
+    border: none;
+    border-radius: 25px;
+
+    padding: 12px 25px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 12px rgba(190, 70, 110, 0.25);
+
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #c43e72, #df668f);
+    transform: scale(1.05);
+}
+
+/* JavaScript message */
+#message {
+    color: #d94f83;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* Footer */
 footer {
-    background-color: #222;
+    background: linear-gradient(135deg, #8e3a5c, #b44f75);
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 25px;
+
+    margin-top: 40px;
 }
